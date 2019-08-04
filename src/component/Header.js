@@ -1,8 +1,8 @@
 import React from "react";
 
-import logo from '../images/logo/logosummerholiday.png'
+import logo from '../images/logo/logosummerholiday.png';
 
-class Header extends React.Component {
+export default class Header extends React.Component {
 
     constructor(props){
         super(props);
@@ -38,7 +38,7 @@ class Header extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-8 text-left">
-                        <h1 className="text-warning"><img style={{height: 75}} src={logo} />Super E-commerce </h1>
+                        <h1 className="text-warning"><img style={{height: 75}} src={logo} />React Healthy E-Commerce </h1>
                     </div>
                     <div className="col-md-4 text-right">
                         {this.state.date.toLocaleTimeString()}
@@ -46,11 +46,10 @@ class Header extends React.Component {
 
                     <hr/>
                 </div>
+                <hr />
             
             </div>
 
         );
     }
 }
-
-export default Header;

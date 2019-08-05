@@ -19,10 +19,16 @@ class ProductItem extends React.Component {
         super(props);
     }
 
+    doSomething(e) {
+
+        alert(e.target.value);
+
+    }
+
 
     render() {
 
-        const {productName, unitPrice, thumbnail} = this.props;
+        const {productId, productName, unitPrice, thumbnail} = this.props.product;
 
         return(
             <div className="col-md-3 col-sm-5">
@@ -31,7 +37,9 @@ class ProductItem extends React.Component {
                 </div>
                 <h5 className="mt-2">{productName}</h5>
                 <p className="title text-right" >{unitPrice} THB</p>
-                <button className="btn btn-block btn-secondary title"> buy </button>
+                <button className="btn btn-block btn-secondary title" value={unitPrice} onClick={() => this.props.onAddOrder(this.props.product)}>
+                    buy 
+                </button>
                 <hr/>
             </div>
         )

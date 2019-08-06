@@ -2,6 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Mock Json-Server with
+json-server --watch resources/data/db.json --port 3001
+
 In the project directory, you can run:
 
 ### `npm start`

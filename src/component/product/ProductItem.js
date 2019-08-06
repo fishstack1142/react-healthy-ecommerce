@@ -25,7 +25,6 @@ class ProductItem extends React.Component {
 
     }
 
-
     render() {
 
         const {productId, productName, unitPrice, thumbnail} = this.props.product;
@@ -35,14 +34,14 @@ class ProductItem extends React.Component {
                 <div className="text-center align-content-center">
                     <img src={thumbnail}  alt="1" className=" rounded mx-auto img-fluid img-thumbnail center"/>
                 </div>
-                <h5 className="mt-2">{productName}</h5>
+                <h5 className="mt-2 text-success">{productName}</h5>
                 <p className="title text-right" >{unitPrice} THB</p>
                 <button className="btn btn-block btn-secondary title" value={unitPrice} onClick={() => this.props.onAddOrder(this.props.product)}>
                     buy 
                 </button>
                 <hr/>
             </div>
-        )
+        );
     }
 }
 

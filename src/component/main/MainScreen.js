@@ -9,7 +9,7 @@ export default class MainScreen extends React.Component {
         super(props);
         this.state = {totalPrice: 0, orders: []};
         this.addOrder = this.addOrder.bind(this);
-        this.delOrder = this.delOrder.bind(this);
+        this.delOrder = this.delOrder.bind(this) ;
     }
 
     addOrder(product) {

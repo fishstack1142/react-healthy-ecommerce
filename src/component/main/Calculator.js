@@ -31,10 +31,12 @@ export default class Calculator extends React.Component {
                     {this.showOrders(orders)}
                 </ul>
                 <hr/>
-                <button className="btn btn-block btn-danger title">
+                <button className="btn btn-block btn-danger title"
+                onClick={() => this.props.onConfirmOrder()}>
                     confirm
                 </button>
-                <button className="btn btn-block btn-secondary title">
+                <button className="btn btn-block btn-secondary title"
+                onClick={() => this.props.onCancelOrder()}>
                     cancel
                 </button>
 

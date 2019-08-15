@@ -2,6 +2,8 @@ import React from "react";
 
 import logo from '../images/logo/logosummerholiday.png';
 
+import { Link } from "react-router-dom";
+
 export default class Header extends React.Component {
 
     constructor(props){
@@ -41,7 +43,20 @@ export default class Header extends React.Component {
                         <h1 className="text-warning"><img style={{height: 75}} src={logo} />React Healthy E-Commerce </h1>
                     </div>
                     <div className="col-md-4 text-right">
-                        {this.state.date.toLocaleTimeString()}
+                        <h5 className="text-muted mt-4">
+                            {this.state.date.toLocaleTimeString()}
+                        </h5>
+                        <ul className="list-inline">
+                        
+                            <li className="list-inline-item title"><Link to="/">Main</Link></li>
+                            <li className="list-inline-item title">|</li>
+                            <li className="list-inline-item title"><Link to="/orders">Orders</Link></li>
+                            <li className="list-inline-item title">|</li>
+                            <li className="list-inline-item title"><Link to="/products">Products</Link></li>
+                            <li className="list-inline-item title">|</li>
+                            <li className="list-inline-item title"><Link to="/about">About</Link></li>
+
+                        </ul>
                     </div>
 
                     <hr/>

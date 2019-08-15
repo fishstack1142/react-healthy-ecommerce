@@ -11,7 +11,6 @@ class Order extends React.Component {
         this.state = {orders: null};
     }
 
-
     componentDidMount() {
 
         axios.get("http://localhost:3001/orders").then(

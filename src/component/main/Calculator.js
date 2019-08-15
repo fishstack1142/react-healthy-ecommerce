@@ -10,7 +10,7 @@ export default class Calculator extends React.Component {
 
             return orders.map(order => {
                 return (
-                    <li className="text-right text-success title">
+                    <li key={order.id} className="text-right text-success title">
                         {order.product.productName} x {order.quantity} = {order.product.unitPrice * order.quantity}
                         <button className="btn btn-light btn-sm" onClick={() => this.props.onDelOrder(order.product)} >X</button>
                     </li>

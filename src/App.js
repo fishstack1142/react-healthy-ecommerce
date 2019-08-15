@@ -3,10 +3,10 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './component/containers/Home';
 import About from './component/containers/About';
-
 import Order from './component/containers/order/Order';
-
 import Product from './component/containers/product/Product';
+
+import NotFound from "./component/containers/error/NotFound";
 
 class App extends Component {
 
@@ -17,6 +17,9 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route path="/orders" component={Order} />
           <Route path="/products" component={Product} />
+
+
+          <Route component={NotFound} />
         </Switch>
       );
     }

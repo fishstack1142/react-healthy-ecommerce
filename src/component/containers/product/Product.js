@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import ProductList from "../../product/ProductList";
+import { withRouter } from "react-router-dom";
 
 import axios from "axios";
 
@@ -11,6 +12,7 @@ class Product extends Component {
         super(props);
         this.state = { products : null };
         this.delProduct = this.delProduct.bind(this);
+        this.editProduct = this.editProduct.bind(this);
 
     }
 
@@ -18,6 +20,10 @@ class Product extends Component {
         axios.get("http://localhost:3001/products").then(res => {
             this.setState({ products : res.data });
         });
+    }
+
+    editProduct(product) {
+        this.props.history.push('products/edit/' + product.id);
     }
 
     delProduct(product) {
@@ -41,11 +47,13 @@ class Product extends Component {
                                 <h1>Product</h1>
                             </div>
                             <div className="col-6">
-                                <button className="btn btn-success title float-right">add</button>
+                                <button className="btn btn-success title float-right"
+                                onClick={() => this.props.history.push('products/add') } >add</button>
                             </div>
                         </div>
                         <ProductList products={this.state.products} 
-                        onDelProduct={this.delProduct} /> 
+                        onDelProduct={this.delProduct}
+                        onEditProduct={this.editProduct} /> 
                     </div>
 
                 <Footer />
@@ -55,4 +63,4 @@ class Product extends Component {
     }
 }
 
-export default Product;
+export default withRouter(Product);

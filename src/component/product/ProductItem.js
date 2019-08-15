@@ -44,7 +44,8 @@ class ProductItem extends React.Component {
                 }
 
                 { (this.props.onDelProduct || this.props.onEditProduct) &&
-                <button className="btn btn-info col-6 title">
+                <button className="btn btn-info col-6 title"
+                onClick={() => this.props.onEditProduct(this.props.product)}>
                     edit 
                 </button>
                 }

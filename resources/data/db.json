@@ -1,14 +1,103 @@
 {
-    "products": [
-        { "productId": 1, "productName": "Burger", "unitPrice": "129", "thumbnail": "images/product/burger.png" },
-        { "productId": 2, "productName": "Burito", "unitPrice": "89", "thumbnail": "images/product/burito.png" },
-        { "productId": 3, "productName": "Cupcake", "unitPrice": "99", "thumbnail": "images/product/cupcake.png" },
-        { "productId": 4, "productName": "Donut", "unitPrice": "59", "thumbnail": "images/product/donut.png" },
-        { "productId": 5, "productName": "French Fries", "unitPrice": "109", "thumbnail": "images/product/fies.png" },
-        { "productId": 6, "productName": "Sandwich", "unitPrice": "169", "thumbnail": "images/product/sandwich.png" },
-        { "productId": 7, "productName": "Taco", "unitPrice": "189", "thumbnail": "images/product/taco.png" }
-    ],
-    "orders": [
-        
-    ]
+  "products": [
+    {
+      "productId": 1,
+      "productName": "Burger",
+      "unitPrice": "129",
+      "thumbnail": "images/product/burger.png",
+      "id": 1
+    },
+    {
+      "productId": 2,
+      "productName": "Burito",
+      "unitPrice": "89",
+      "thumbnail": "images/product/burito.png",
+      "id": 2
+    },
+    {
+      "productId": 3,
+      "productName": "Cupcake",
+      "unitPrice": "99",
+      "thumbnail": "images/product/cupcake.png",
+      "id": 3
+    },
+    {
+      "productId": 4,
+      "productName": "Donut",
+      "unitPrice": "59",
+      "thumbnail": "images/product/donut.png",
+      "id": 4
+    },
+    {
+      "productId": 5,
+      "productName": "French Fries",
+      "unitPrice": "109",
+      "thumbnail": "images/product/fies.png",
+      "id": 5
+    },
+    {
+      "productId": 6,
+      "productName": "Sandwich",
+      "unitPrice": "169",
+      "thumbnail": "images/product/sandwich.png",
+      "id": 6
+    },
+    {
+      "productId": 7,
+      "productName": "Taco",
+      "unitPrice": "189",
+      "thumbnail": "images/product/taco.png",
+      "id": 7
+    }
+  ],
+  "orders": [
+    {
+      "orderedDate": "2019-08-07T01:09:33.374Z",
+      "totalPrice": 178,
+      "orders": [
+        {
+          "product": {
+            "productId": 2,
+            "productName": "Burito",
+            "unitPrice": "89",
+            "thumbnail": "images/product/burito.png"
+          },
+          "quantity": 2
+        }
+      ],
+      "id": 1
+    },
+    {
+      "orderedDate": "2019-08-11T08:08:10.815Z",
+      "totalPrice": 1980,
+      "orders": [
+        {
+          "product": {
+            "productId": 3,
+            "productName": "Cupcake",
+            "unitPrice": "99",
+            "thumbnail": "images/product/cupcake.png"
+          },
+          "quantity": 20
+        }
+      ],
+      "id": 2
+    },
+    {
+      "orderedDate": "2019-08-11T08:22:22.885Z",
+      "totalPrice": 118,
+      "orders": [
+        {
+          "product": {
+            "productId": 4,
+            "productName": "Donut",
+            "unitPrice": "59",
+            "thumbnail": "images/product/donut.png"
+          },
+          "quantity": 2
+        }
+      ],
+      "id": 3
+    }
+  ]
 }

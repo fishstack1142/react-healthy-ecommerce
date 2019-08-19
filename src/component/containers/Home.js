@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-import ProductItem from "../product/ProductItem";
 import MainScreen from '../main/MainScreen';
+import axios from "axios";
+import { connect } from "react-redux";
+import { productsFetch } from "../../redux/actions/index";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import axios from "axios";
-import { copyFileSync } from 'fs';
-
 class Home extends Component {
 
   constructor(props) {
       super(props);
-      this.state = { products : "" };
+      //use react instead
+      //this.state = { products : "" };
+
+
   }
 
 
   componentDidMount() {
+
+    this.props.productsFetch();    
+
+
+
     // this.setState({
     //   products : [
     //     { productId: 1, productName: "Burger", unitPrice: "129", thumbnail: "images/product/burger.png" },
@@ -36,10 +42,12 @@ class Home extends Component {
     // .then(res => {this.setState({ products : res })})
     // .then(res => { console.log(res)});
 
-    axios.get("http://localhost:3001/products").then(res => {
-      console.log(res.data);
-      { this.setState({ products : res.data })};
-    });
+
+    //use redux instead
+    // axios.get("http://localhost:3001/products").then(res => {
+    //   console.log(res.data);
+    //   { this.setState({ products : res.data })};
+    // });
 
 }
 
@@ -50,14 +58,21 @@ class Home extends Component {
 
         <Header />
 
-        <MainScreen products={this.state.products} />
+        <MainScreen products={this.props.products} />
 
         <Footer company="company1" email="email@mail.com" />
 
       </div>
   );
-
   }
 }
 
-export default Home;
+function mapStateToProps(state) {
+    console.log("data from home page");
+    console.log(state);
+    return { products: state.product };
+
+}
+
+
+export default connect(mapStateToProps, { productsFetch })(Home);

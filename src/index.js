@@ -4,13 +4,26 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const element = <h1>hello react ecommerce</h1>
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import reducers from './redux/reducers/index';
+ import reduxThunk from "redux-thunk";
 
-function Welcome(){
-    return <h1>Welcome to React Ecommerce page</h1>
-}
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+
+// const element = <h1>hello react ecommerce</h1>
+
+// function Welcome(){
+//     return <h1>Welcome to React Ecommerce page</h1>
+// }
+
+
+//provider is store from redux for react
+ReactDOM.render(<Provider store={store}>
+    <App />
+    </Provider>
+    , document.getElementById('root'));
 
 // ReactDOM.render(<Welcome />, document.getElementById('root'));
 

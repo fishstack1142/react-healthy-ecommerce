@@ -5,7 +5,9 @@ export const ordersFetch = () => {
     return dispatch => {
         axios.get("http://localhost:3001/orders").then(
             res => {
-                dispatch({ type: "ORDERS_FETCH", payload: res.data });
+                console.log('this is the order action.');
+                console.log(res.data);
+                dispatch({ type: ORDERS_FETCH, payload: res.data });
             }
         );
     };
